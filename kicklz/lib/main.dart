@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kicklz/SpeakTheEmotion.dart';
 import 'package:kicklz/auth.dart';
 import 'package:kicklz/home.dart';
 import 'package:kicklz/login.dart';
