@@ -1,29 +1,37 @@
-import 'package:flutter/material.dart';
-import 'package:kicklz/SpeakTheEmotion.dart';
-import 'package:kicklz/auth.dart';
-import 'package:kicklz/home.dart';
-import 'package:kicklz/login.dart';
-import 'package:kicklz/user.dart';
-import 'package:kicklz/wrapper.dart';
-import 'package:provider/provider.dart';
+import 'dart:isolate';
 
-void main() {
+//import 'package:android_alarm_manager/android_alarm_manager.dart';
+import 'package:flutter/material.dart';
+//import 'package:sowmya/kicklloginpage.dart';
+//import 'package:sowmya/goalpad.dart';
+import 'kicklloginpage.dart';
+import 'kicklhomepage.dart';
+//import 'package:sowmya/splashscreen.dart';
+//import 'package:sowmya/splashscreen.dart';
+import 'splashscreen.dart';
+
+Future<void> main() async {
+  final int helloAlarmID = 0;
+  // await AndroidAlarmManager.initialize();
   runApp(MyApp());
+  // await AndroidAlarmManager.periodic(const Duration(seconds: 1), helloAlarmID, printHello);
 }
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return StreamProvider<User>.value(
-        value:AuthService().user,
-          child: MaterialApp(
-          
-        debugShowCheckedModeBanner: false,
-       
-        home:Wrapper(),
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'home',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
       ),
+      home: Logopage()
     );
   }
 }
 
+void printHello() {
+  final DateTime now = DateTime.now();
+  print("Hello World Done $now");
+}
